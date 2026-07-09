@@ -1,0 +1,55 @@
+Sobre los tipos de datos, de los lenguajes elegidos.
+
+1. JavaScript
+Categoría: Dinámico y Débilmente Tipado.
+
+Tipos de datos principales:
+Primitivos: Number (para enteros y decimales), String, Boolean, Undefined (variable sin valor), Null, Symbol y BigInt (enteros grandes).
+
+Compuestos: Object (los arreglos [] y las funciones se derivan de este tipo).
+
+Comportamiento clave: Al ser débilmente tipado, permite operaciones automáticas entre tipos diferentes, como sumar un número y un texto (5 + "5" da como resultado "55").
+
+2. Python
+Categoría: Dinámico y Fuertemente Tipado.
+
+Tipos de datos principales:
+Numéricos: int, float, complex (números complejos).
+
+Texto: str.
+
+Booleanos: bool (True o False).
+
+Colecciones:
+
+list (Listas modificables: [1, 2, 3]).
+
+tuple (Listas inmutables: (1, 2, 3)).
+
+dict (Estructuras clave-valor: {"id": 1}).
+
+set (Colecciones de elementos únicos sin orden).
+
+Comportamiento clave: Al ser fuertemente tipado, no permite mezclar tipos. Hacer 5 + "5" generará un error de tipo (TypeError) en lugar de forzar la conversión.
+
+3. C#
+Categoría: Estático y Fuertemente Tipado.
+
+Tipos de datos principales:
+Tipos de Valor: int, long (enteros grandes), float, double, decimal (alta precisión para datos financieros), bool, char.
+
+Tipos de Referencia: string, class (objetos), array (arreglos de tamaño fijo).
+
+Comportamiento clave: Los tipos deben definirse al declarar la variable y no pueden cambiar. Si usas la palabra clave var, el lenguaje adivina el tipo en el primer uso, pero este sigue siendo fijo y estricto a partir de ahí.
+
+4. PHP
+Categoría: Dinámico y Débilmente Tipado.
+
+Tipos de datos principales:
+Escalares: int, float, string, bool.
+
+Compuestos: array (funcionan tanto como listas indexadas como mapas clave-valor al mismo tiempo), object.
+
+Especiales: null, resource (referencias a recursos externos como bases de datos).
+
+Comportamiento clave: Convierte tipos de datos automáticamente en operaciones web comunes. Sin embargo, en sus versiones modernas permite activar un modo estricto (strict_types=1) para forzar un comportamiento más parecido al de lenguajes estáticos.
