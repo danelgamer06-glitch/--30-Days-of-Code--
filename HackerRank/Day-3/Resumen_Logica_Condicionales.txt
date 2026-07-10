@@ -1,0 +1,62 @@
+===================================================================
+             RESUMEN DE APRENDIZAJE: ESTRUCTURAS CONDICIONALES
+===================================================================
+
+Este documento contiene el resumen didactico sobre el ejercicio de logica 
+resuelto en JavaScript, C# y PHP. El objetivo es consolidar los conceptos 
+clave de programacion y toma de decisiones.
+
+1. EL OPERADOR MODULO (%) Y LA PARIDAD
+-------------------------------------------------------------------
+La primera gran leccion es como determinar si un numero es par o impar.
+Para ello se utiliza el operador Residuo o Modulo (%).
+
+* Formula: N % 2
+* Si el resultado es 0: El numero es PAR (ej. 4 % 2 = 0).
+* Si el resultado es diferente de 0: El numero es IMPAR (ej. 5 % 2 = 1).
+
+En el ejercicio, esta es la primera condicion evaluada. Si el numero es
+impar, se clasifica directamente como "Weird".
+
+2. ESTRUCTURAS DE CONTROL (if, else if, else)
+-------------------------------------------------------------------
+Las computadoras evaluan las condiciones en orden jerarquico y secuencial:
+
+* if (Si...): Es la primera validacion. Si se cumple (true), ejecuta su
+  bloque de codigo y descarta todas las demas opciones.
+* else (De lo contrario...): Es el camino obligatorio cuando ninguna de 
+  las condiciones anteriores se cumplio. En nuestro ejercicio, si un 
+  numero no es impar, cae aqui por descarte, confirmando que es PAR.
+* else if / elseif (De lo contrario, si...): Permite evaluar multiples
+  condiciones consecutivas antes de recurrir al 'else' final. Es ideal
+  para validar rangos numericos.
+
+3. OPERADORES LOGICOS COMBINADOS (&&)
+-------------------------------------------------------------------
+Para validar si un numero se encuentra dentro de un rango especifico,
+se utiliza el operador logico AND (representado como &&).
+
+* Ejemplo: (N >= 6 && N <= 20)
+* Significado: "N debe ser mayor o igual a 6 Y AL MISMO TIEMPO menor 
+  o igual a 20". Ambas premisas deben ser verdaderas para ingresar.
+
+===================================================================
+                       TABLA DE SINTAXIS
+===================================================================
+
+A pesar de que la logica es universal, cada lenguaje tiene su forma
+particular de escribir las instrucciones:
+
++----------------------+--------------------+--------------------+--------------------+
+| Concepto             | JavaScript (Node)  | C#                 | PHP                |
++----------------------+--------------------+--------------------+--------------------+
+| Imprimir en consola  | console.log()      | Console.WriteLine()| echo ... . "\n"   |
+| Desigualdad          | !== (Estricta)     | !=                 | !=                 |
+| Variables            | const N / let N    | int N (Tipado)     | $N (Signo $)       |
+| Sino, si...          | else if            | else if            | elseif             |
++----------------------+--------------------+--------------------+--------------------+
+
+CONCLUSION DE APRENDIZAJE:
+La sintaxis cambia entre tecnologias, pero la estructura del pensamiento 
+logico se mantiene intacta. Dominar los condicionales te abrira las puertas 
+para resolver problemas complejos en cualquier lenguaje de programacion.
