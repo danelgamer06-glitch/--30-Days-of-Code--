@@ -1,16 +1,21 @@
 i = 4
 d = 4.0
-s = 'HackerRank '
+s = 'HackerRank'
 # Read and save an integer, double, and String to your variables.
-i2 = int(input())
-d2 = float(input())
-s2 = input()
+entero = 0 
+decimal = 0.0
+cadena_texto = ""
 # Print the sum of both integer variables on a new line.
-print(i + i2)
+
+entero = int(input())
+decimal = float(input())
+cadena_texto = input()
 
 # Print the sum of the double variables on a new line.
-print(f"{d + d2:.1f}")
+print(i + entero)
+print(d + decimal)
 
 # Concatenate and print the String variables on a new line
 # The 's' variable above should be printed first.
-print(s + s2)
+print(f"{s + cadena_texto}")
+
