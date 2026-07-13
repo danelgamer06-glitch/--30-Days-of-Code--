@@ -1,0 +1,59 @@
+====================================================================
+RESUMEN TÉCNICO: BUCLES / CICLOS (LOOPS) - PROGRAMACIÓN
+====================================================================
+
+Este documento resume los conceptos fundamentales del reto "Day 5: Loops" 
+de la plataforma HackerRank, enfocado en el uso y control de estructuras de 
+repetición en la programación.
+
+--------------------------------------------------------------------
+1. ¿QUÉ ES UN BUCLE (LOOP)?
+--------------------------------------------------------------------
+Un bucle o ciclo es una estructura de control que permite ejecutar un bloque 
+de código repetidas veces de forma automática, siempre y cuando se cumpla 
+una condición específica. Son fundamentales para evitar la duplicación de 
+código y para procesar colecciones de datos de manera eficiente.
+
+--------------------------------------------------------------------
+2. TIPOS PRINCIPALES DE BUCLES
+--------------------------------------------------------------------
+* BUCLE 'FOR' (Para):
+  Se utiliza cuando se conoce de antemano el número exacto de iteraciones 
+  o cuando se desea recorrer un rango numérico o una estructura iterable 
+  (como una lista, arreglo o string).
+  
+  Ejemplo conceptual: "Para i desde 1 hasta 10, imprime el resultado".
+
+* BUCLE 'WHILE' (Mientras):
+  Se utiliza cuando el número de iteraciones no está predeterminado, sino que 
+  depende de una condición booleana dinámica. El bloque se repite *mientras* la condición sea verdadera.
+  
+  Ejemplo conceptual: "Mientras el usuario no presione 'Salir', mantén la 
+  aplicación abierta".
+
+--------------------------------------------------------------------
+3. COMPONENTES ESENCIALES DE UN BUCLE
+--------------------------------------------------------------------
+1. Inicialización: Definición de la variable de control (ej. i = 1).
+2. Condición de parada: Expresión lógica que determina si el ciclo continúa 
+   o termina (ej. i <= 10). Si nunca se vuelve falsa, ocurre un "bucle infinito".
+3. Actualización o Incremento: Modificación de la variable de control en cada 
+   vuelta para acercarse a la condición de parada (ej. i++ o i = i + 1).
+
+--------------------------------------------------------------------
+4. SOBRE EL RETO DE LA IMAGEN (Day 5: Loops)
+--------------------------------------------------------------------
+En el reto específico "Day 5: Loops" de los 30 días de código de HackerRank:
+* Objetivo común: El ejercicio pide leer un número entero 'n' a través de la 
+  entrada estándar (consola) e imprimir su tabla de multiplicar del 1 al 10.
+* Formato de salida requerido:
+  n x 1 = resultado
+  n x 2 = resultado
+  ...
+  n x 10 = resultado
+* Implementación ideal: Se resuelve típicamente con un único bucle 'for' que 
+  itera una variable desde 1 hasta 10, multiplicando 'n' por el índice en 
+  cada iteración y aplicando formato de texto (Template Literals o concatenación).
+
+====================================================================
+Fin del documento.
