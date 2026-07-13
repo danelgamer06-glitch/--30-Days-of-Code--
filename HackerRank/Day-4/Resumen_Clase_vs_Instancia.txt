@@ -1,0 +1,50 @@
+====================================================================
+RESUMEN TÉCNICO: CLASE VS. INSTANCIA (PROGRAMACIÓN ORIENTADA A OBJETOS)
+====================================================================
+
+Este documento resume los conceptos fundamentales detrás del reto "Day 4: Class vs. Instance" 
+de la plataforma HackerRank, orientados al aprendizaje de la Programación Orientada a Objetos (POO).
+
+--------------------------------------------------------------------
+1. ¿QUÉ ES UNA CLASE (CLASS)?
+--------------------------------------------------------------------
+Es un molde, plano, plantilla o diseño abstracto que define las propiedades (atributos)
+y el comportamiento (métodos) que tendrán los objetos creados a partir de ella. No ocupa 
+un espacio real con datos específicos en la memoria, es solo la estructura lógica.
+
+* Ejemplo analógico: El plano arquitectónico de una casa.
+* Ejemplo en código: La definición de la clase 'Persona' que especifica que toda persona 
+  tendrá un nombre y una edad.
+
+--------------------------------------------------------------------
+2. ¿QUÉ ES UNA INSTANCIA (INSTANCE)?
+--------------------------------------------------------------------
+Es el objeto real, concreto y vivo que se crea en la memoria de la computadora utilizando 
+el molde de la clase. Cada instancia es única y posee sus propios valores para los 
+atributos definidos por la clase.
+
+* Ejemplo analógico: La casa física construida con ladrillos donde vive alguien.
+* Ejemplo en código: Un objeto específico llamado 'juan' con nombre "Juan" y edad 27.
+
+--------------------------------------------------------------------
+3. TABLA COMPARATIVA
+--------------------------------------------------------------------
+CONCEPTO          | CLASE (CLASS)                | INSTANCIA (INSTANCE)
+------------------|------------------------------|------------------------------
+Naturaleza        | El plano conceptual.         | El objeto real en memoria.
+Existencia        | Se define una sola vez.      | Se pueden crear infinitas copias.
+Asignación        | No almacena datos reales.    | Almacena datos específicos.
+
+--------------------------------------------------------------------
+4. SOBRE EL RETO DE LA IMAGEN (Day 4: Class vs. Instance)
+--------------------------------------------------------------------
+* Dificultad: Fácil (Easy)
+* Puntaje Máximo: 30 puntos
+* Tasa de éxito: 96.54%
+* Enfoque del ejercicio: El ejercicio usualmente requiere crear un constructor para 
+  inicializar un atributo de instancia (como la 'edad') evaluando condiciones iniciales 
+  (por ejemplo, si la edad ingresada es negativa, establecerla en 0) y desarrollar métodos 
+  para modificar y leer dicho estado.
+
+====================================================================
+Fin del documento.
