@@ -1,0 +1,69 @@
+========================================================================
+GUIA RAPIDA: MANEJO DE ENTRADAS (I/O) Y STRINGS EN VS CODE & HACKERRANK
+========================================================================
+
+1. ¿POR QUE EL INPUT SIEMPRE LLEGA COMO UN "TEXTO GIGANTE"?
+------------------------------------------------------------------------
+Tanto en JavaScript (process.stdin) como en Python (sys.stdin.read), la 
+plataforma te envía todos los datos juntos como un solo String gigante.
+
+Tu primer paso en cualquier ejercicio de programación siempre será:
+  1. Limpiar espacios fantasmas con .strip() (Python) o .trim() (JS).
+  2. Separar el texto en líneas usando el salto de línea '\n'.
+
+------------------------------------------------------------------------
+2. EQUIVALENCIAS DIRECTAS: JAVASCRIPT VS PYTHON
+------------------------------------------------------------------------
+Aquí tienes cómo se traduce cada acción esencial entre ambos lenguajes:
+
+Acción                       En JavaScript (JS)       En Python (PY)
+------------------------------------------------------------------------
+Quitar espacios/saltos       texto.trim()             texto.strip()
+Separar por líneas           texto.split('\n')        texto.split('\n')
+Convertir a entero           parseInt(valor, 10)      int(valor)
+Convertir array de textos    arr.map(Number)          list(map(int, arr))
+a números
+Imprimir en consola          console.log(resultado)   print(resultado)
+
+------------------------------------------------------------------------
+3. EL SUPERPODER DE PYTHON: EL "SLICING" (REBANADO)
+------------------------------------------------------------------------
+La sintaxis de corte en Python es:  cadena[inicio:fin:paso]
+
+- Si omites 'inicio' y 'fin' pero pones el paso, puedes hacer magia:
+    s = "Hacker"
+    
+    s[::2]  -> "Hce" (Empieza en 0, va hasta el final, salta de 2 en 2)
+    s[1::2] -> "akr" (Empieza en 1, va hasta el final, salta de 2 en 2)
+    s[::-1] -> "rekcaH" (¡Invierte la palabra por completo!)
+
+------------------------------------------------------------------------
+4. PLANTILLA MAESTRA PARA COPIAR, PEGAR Y PROBAR (PYTHON)
+------------------------------------------------------------------------
+Usa esta estructura para cualquier ejercicio futuro. Te permite pegar
+tus datos de prueba directamente en el código para no complicarte:
+
+def solucionar_ejercicio(datos_entrada):
+    # --------------------------------------------------
+    # Escribe tu lógica aquí adentro
+     lineas = datos_entrada.strip().split('\n')
+     print("Lineas recibidas:", lineas)
+    # --------------------------------------------------
+
+if __name__ == '__main__':
+    # Cambia esto a False antes de pegarlo en HackerRank
+    PROBANDO_EN_VS_CODE = True 
+    
+    if PROBANDO_EN_VS_CODE:
+        # Pega aqui el "Input (stdin)" que te de HackerRank:
+        datos_prueba = """Mi input de prueba
+linea 2
+linea 3"""
+        solucionar_ejercicio(datos_prueba)
+    else:
+        import sys
+        datos_reales = sys.stdin.read()
+        if datos_reales:
+            solucionar_ejercicio(datos_reales)
+
+========================================================================
