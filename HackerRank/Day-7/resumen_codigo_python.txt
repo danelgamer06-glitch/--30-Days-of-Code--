@@ -1,0 +1,47 @@
+====================================================================
+RESUMEN Y ANÁLISIS DE CÓDIGO PYTHON: INVERSIÓN DE ARREGLO
+====================================================================
+
+1. DESCRIPCIÓN Y FUNCIONAMIENTO DEL CÓDIGO
+--------------------------------------------------------------------
+Este programa toma como entrada un entero 'n' (la cantidad de elementos) 
+y una lista de números enteros ingresados por la entrada estándar, 
+ e imprime dichos números en orden inverso, separados por un espacio.
+
+Paso a paso del flujo de ejecución:
+1. n = int(input().strip()): Lee la primera línea de entrada,
+   elimina espacios en blanco sobrantes con .strip(), y convierte 
+   el valor a un número entero 'n'.
+2. arr = list(map(int, input().rstrip().split())): Lee la segunda 
+   línea, elimina espacios al final con .rstrip(), divide la cadena 
+   en subcadenas con .split(), convierte cada elemento a entero con 
+   map(int, ...) y los almacena en una lista 'arr'.
+3. arr.reverse(): Invierte el orden de los elementos de la lista 'arr' 
+   de manera 'in-place' (modificando la lista original directamente).
+4. print(*arr): Desempaqueta la lista e imprime cada número separado 
+   por un espacio por defecto.
+
+
+2. APRENDIZAJES Y CONCEPTOS CLAVE
+--------------------------------------------------------------------
+• Manejo y Limpieza de Entradas (Input Handling):
+  - El uso de .strip() y .rstrip() evita errores al procesar caracteres 
+    de salto de línea (\n) o espacios adicionales.
+
+• Conversión Eficiente de Datos:
+  - El patrón list(map(int, input().split())) es la forma idiomatica en 
+    Python para convertir una línea de texto con múltiples números en 
+    una lista de enteros.
+
+• Manipulación de Listas (Inversión):
+  - .reverse() invierte la lista directamente en memoria sin ocupar 
+    memoria adicional para una copia.
+  - Alternativa útil: El slicing arr[::-1], que genera una nueva lista 
+    invertida.
+
+• Operador de Desempaquetado (*):
+  - Utilizar *arr dentro de print() imprime todos los elementos de la 
+    lista separados por espacios sin requerir un bucle 'for' o la 
+    función .join().
+
+====================================================================
