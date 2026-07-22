@@ -1,0 +1,51 @@
+====================================================================
+RESUMEN Y ANÁLISIS DE CÓDIGO PYTHON: ATRIBUTOS PRIVADOS Y MÁXIMA DIFERENCIA
+====================================================================
+
+1. DESCRIPCIÓN Y FUNCIONAMIENTO DEL CÓDIGO
+--------------------------------------------------------------------
+Este programa define una clase llamada `Difference` que toma una lista de 
+números enteros y calcula la diferencia absoluta máxima entre cualquiera de 
+sus elementos.
+
+Paso a paso del flujo de ejecución:
+1. Clase `Difference`:
+   - `__init__(self, a)`: Constructor que recibe una lista 'a' y la almacena en 
+     el atributo `self.__elements`. El doble guión bajo (`__`) indica que es un 
+     atributo privado (mangled attribute) accesible principalmente dentro de la clase. 
+     También inicializa `self.maximumDifference` en 0.
+   - `computeDifference(self)`: Método que calcula la diferencia máxima posible 
+     restando el valor mínimo del valor máximo en la lista: 
+     `max(self.__elements) - min(self.__elements)`. Guarda el resultado en 
+     `self.maximumDifference`.
+
+2. Ejecución Principal:
+   - `_ = input()`: Lee la cantidad de elementos (se descarta asignándolo a `_`).
+   - `a = [int(e) for e in input().split(' ')]`: Convierte la línea de entrada 
+     en una lista de números enteros usando una comprensión de listas (List Comprehension).
+   - Instancia el objeto `Difference(a)`, llama a `computeDifference()` e imprime 
+     el resultado guardado en `d.maximumDifference`.
+
+
+2. APRENDIZAJES Y CONCEPTOS CLAVE
+--------------------------------------------------------------------
+• Encapsulamiento y Atributos Privados en Python (`__`):
+  - El prefijo de doble guión bajo (por ejemplo, `self.__elements`) activa el 
+    mecanismo de "Name Mangling" en Python, ocultando intencionalmente el atributo 
+    para evitar modificaciones directas o colisiones fuera de la clase.
+
+• Comprensión de Listas (List Comprehension):
+  - El uso de `[int(e) for e in input().split(' ')]` es una forma limpia, directa 
+    y bastante común en Python para mapear tipos sobre una colección dividida por espacios.
+
+• Optimización Matemática con `max()` y `min()`:
+  - En lugar de usar bucles anidados para comparar todas las parejas posibles de 
+    números (que tomaría un tiempo de O(N^2)), la diferencia absoluta máxima 
+    entre cualquier par en un conjunto numérico siempre será la resta entre su 
+    elemento máximo y su elemento mínimo, reduciendo la complejidad a O(N).
+
+• Uso de `_` para Variables Descartables:
+  - La convención de asignar a `_` indica explícitamente que el dato leído es 
+    requerido por el formato del problema, pero no se necesita almacenar para la lógica.
+
+====================================================================
