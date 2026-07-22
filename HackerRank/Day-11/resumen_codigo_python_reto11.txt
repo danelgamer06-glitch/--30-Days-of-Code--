@@ -1,0 +1,54 @@
+====================================================================
+RESUMEN Y ANÁLISIS DE CÓDIGO PYTHON: SUMA MÁXIMA DE RELOJ DE ARENA (2D ARRAY)
+====================================================================
+
+1. DESCRIPCIÓN Y FUNCIONAMIENTO DEL CÓDIGO
+--------------------------------------------------------------------
+Este programa recibe una matriz bidimensional (2D) de 6x6 números enteros 
+y calcula la suma de todos los elementos contenidos en cada "reloj de arena" 
+(hourglass) posible dentro de la matriz, retornando la suma máxima encontrada.
+
+Un "reloj de arena" en una matriz de 6x6 tiene la siguiente forma de 3x3:
+  a b c
+    d
+  e f g
+
+Paso a paso del flujo de ejecución:
+1. Declaración del valor inicial:
+   - `max_suma = -float('inf')`: Inicializa la suma máxima con infinito negativo. 
+     Esto es crítico porque los valores de la matriz pueden ser números negativos.
+2. Bucles anidados de recorrido (`for i in range(4)` y `for j in range(4)`):
+   - Dado que cada reloj de arena requiere una ventana de 3x3, los índices 
+     superiores izquierdos `(i, j)` solo pueden variar desde la fila 0 a la 3 
+     y desde la columna 0 a la 3 (un total de 16 relojes de arena).
+3. Extracción de partes del reloj de arena:
+   - `top = arr[i][j] + arr[i][j+1] + arr[i][j+2]`: Suma de los 3 valores superiores.
+   - `mid = arr[i+1][j+1]`: El elemento central del reloj.
+   - `bottom = arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]`: Suma de los 3 valores inferiores.
+4. Actualización del máximo:
+   - Se calcula `suma_actual` y si es mayor que `max_suma`, se actualiza la variable.
+5. Escritura del resultado:
+   - Al finalizar las iteraciones, escribe la suma máxima en el archivo de salida `OUTPUT_PATH`.
+
+
+2. APRENDIZAJES Y CONCEPTOS CLAVE
+--------------------------------------------------------------------
+• Manejo de Matrices Bidimensionales (Arreglos 2D):
+  - Recorrido eficiente de subestructuras dentro de una matriz mediante 
+    desplazamientos de índices (`i` para filas, `j` para columnas).
+
+• Delimitación de Límites en Ventanas Deslizantes (Pattern Matching):
+  - Para evitar un error de fuera de rango (`IndexError`), al buscar submatrices 
+    de 3x3 en una matriz de 6x6, el rango máximo de iteración debe ser 4 (`range(4)`), 
+    ya que `i + 2` y `j + 2` alcanzarán el límite del arreglo (índice 5).
+
+• Manejo Correcto de Valores Mínimos (`-float('inf')`):
+  - Inicializar `max_suma` en `0` habría sido un error común si la matriz contenía 
+    únicamente valores negativos. Usar `-float('inf')` garantiza que cualquier 
+    suma calculada, por pequeña o negativa que sea, sea mayor que la inicial.
+
+• Construcción de Matrices a partir de la Entrada:
+  - Comprensión de la lectura repetida `arr.append(list(map(int, input().split())))` 
+    para construir matrices fila por fila.
+
+====================================================================
