@@ -1,0 +1,51 @@
+====================================================================
+RESUMEN Y ANÁLISIS DE CÓDIGO PYTHON: CLASES ABSTRACTAS Y METACLASES (ABC)
+====================================================================
+
+1. DESCRIPCIÓN Y FUNCIONAMIENTO DEL CÓDIGO
+--------------------------------------------------------------------
+Este programa implementa la abstracción en Programación Orientada a Objetos 
+(POO) mediante el uso del módulo `abc` (Abstract Base Classes) en Python. 
+Define una clase abstracta `Book` y una subclase concreta `MyBook` que implementa 
+sus métodos obligatorios.
+
+Paso a paso del flujo de ejecución:
+1. Clase Abstracta `Book`:
+   - Utiliza `metaclass=ABCMeta` para declarar que es una clase abstracta 
+     (no se puede instanciar directamente).
+   - Su constructor `__init__(self, title, author)` asigna el título y el autor.
+   - El método `@abstractmethod def display(): pass` define un contrato: 
+     cualquier subclase que herede de `Book` está obligada a implementar 
+     su propia versión del método `display()`.
+
+2. Clase Concreta `MyBook(Book)`:
+   - Hereda de `Book` y extiende su constructor usando `super().__init__(title, author)` 
+     para establecer el título y autor, añadiendo además el atributo `self.price`.
+   - Implementa obligatoriamente el método `display(self)`, imprimiendo 
+     el título, el autor y el precio con el formato requerido.
+
+3. Lectura de Entradas:
+   - Recibe mediante `input()` los datos necesarios para instanciar la clase.
+
+
+2. APRENDIZAJES Y CONCEPTOS CLAVE
+--------------------------------------------------------------------
+• Módulo `abc` y Clases Abstractas (`ABCMeta`, `@abstractmethod`):
+  - Las clases abstractas actúan como "plantillas" o contratos. Evitan que se 
+    puedan crear objetos incompletos y garantizan que todas las subclases 
+    posean los mismos métodos esenciales.
+
+• Obligatoriedad de Implementación:
+  - Si una subclase hereda de una clase abstracta pero no implementa los métodos 
+    decorados con `@abstractmethod`, Python lanzará un error del tipo `TypeError` 
+    al intentar instanciarla.
+
+• Reutilización de Código con `super()`:
+  - Permite delegar la asignación de atributos compartidos (`title`, `author`) 
+    a la clase padre, manteniendo el código DRY (Don't Repeat Yourself).
+
+• Cadenas con Formato (f-strings):
+  - Uso de `f"Title: {self.title}"` para construir salidas de texto limpias 
+    e interpolar variables de forma sencilla.
+
+====================================================================
