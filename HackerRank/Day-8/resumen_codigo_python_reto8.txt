@@ -1,0 +1,51 @@
+====================================================================
+RESUMEN Y ANÁLISIS DE CÓDIGO PYTHON: AGENDA TELEFÓNICA (DICTIONARY & EOF)
+====================================================================
+
+1. DESCRIPCIÓN Y FUNCIONAMIENTO DEL CÓDIGO
+--------------------------------------------------------------------
+Este programa implementa una agenda telefónica en Python (típico reto de 
+estructuras de datos en plataformas como HackerRank). Lee 'n' contactos 
+(nombre y teléfono) y luego responde una serie de consultas hasta que se 
+agoten los datos de entrada (EOF - End of File).
+
+Paso a paso del flujo de ejecución:
+1. input_data = sys.stdin.read().split(): Lee absolutamente TODO el flujo 
+   de entrada estándar de una sola vez y lo divide en tokens utilizando 
+   espacios o saltos de línea como separadores.
+2. n = int(input_data[0]): Extrae el primer elemento, que indica la 
+   cantidad de contactos a registrar.
+3. Bucle de registro (for _ in range(n)): Recorre los tokens de dos en dos 
+   (nombre y número de teléfono) y los almacena como pares clave-valor 
+   en un diccionario llamado 'phone_book'.
+4. Bucle de consultas (while idx < len(input_data)): Procesa todos los 
+   tokens restantes como consultas de nombres.
+   - Si la clave 'query' existe en 'phone_book', imprime 'nombre=numero'.
+   - Si no existe, imprime 'Not found'.
+
+
+2. APRENDIZAJES Y CONCEPTOS CLAVE
+--------------------------------------------------------------------
+• Lectura Eficiente con I/O Masivo (sys.stdin.read):
+  - En lugar de hacer múltiples llamadas a input(), utilizar sys.stdin.read().split() 
+    permite leer toda la entrada de golpe. Es sumamente rápido y maneja de 
+    forma nativa la lectura hasta el fin de archivo (EOF) sin preocuparse 
+    por excepciones de salto de línea.
+
+• Estructuras de Datos - Diccionarios (Hash Maps / Key-Value):
+  - El uso de un diccionario (phone_book) permite búsquedas e inserciones 
+    en tiempo constante O(1) promedio, lo cual es ideal para consultas de 
+    búsqueda rápida.
+
+• Manejo de Punteros/Índices Manuales:
+  - Al procesar un arreglo lineal de tokens (input_data), se utiliza la 
+    variable 'idx' para controlar manualmente la posición del puntero, 
+    avanzando de 2 en 2 durante la fase de carga y de 1 en 1 durante la 
+    fase de consultas.
+
+• Búsqueda de Claves en Diccionarios:
+  - La verificación `if query in phone_book` comprueba de forma limpia y 
+    eficiente la existencia de una clave antes de intentar acceder a ella, 
+    evitando errores de tipo KeyError.
+
+====================================================================
