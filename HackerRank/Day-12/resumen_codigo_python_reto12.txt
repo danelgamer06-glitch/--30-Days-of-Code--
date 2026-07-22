@@ -1,0 +1,58 @@
+====================================================================
+RESUMEN Y ANÁLISIS DE CÓDIGO PYTHON: HERENCIA DE CLASES Y POO
+====================================================================
+
+1. DESCRIPCIÓN Y FUNCIONAMIENTO DEL CÓDIGO
+--------------------------------------------------------------------
+Este programa aplica los conceptos de Programación Orientada a Objetos 
+(POO) en Python, específicamente Herencia de Clases. Define una clase base 
+`Person` y una clase derivada `Student` que hereda sus atributos y métodos, 
+añadiendo una lista de calificaciones y un método para calcular la escala de 
+promedio (calificación con letra).
+
+Paso a paso del flujo de ejecución:
+1. Clase Base `Person`:
+   - `__init__(self, firstName, lastName, idNumber)`: Inicializa los atributos 
+     básicos de una persona (nombre, apellido y documento de identidad).
+   - `printPerson(self)`: Método que imprime el nombre completo en formato 
+     "Apellido, Nombre" y su ID.
+
+2. Clase Derivada `Student(Person)`:
+   - `__init__(self, firstName, lastName, idNumber, scores)`: 
+     Utiliza `super().__init__(...)` para invocar el constructor de la clase base 
+     `Person` y reutilizar la asignación de `firstName`, `lastName` e `idNumber`. 
+     Además, asigna el nuevo atributo específico `self.scores` (lista de notas).
+   - `calculate(self)`: Calcula el promedio matemático de la lista de notas 
+     `sum(self.scores) / len(self.scores)` y retorna una letra de escala según 
+     el rango del promedio obtenido:
+       - 90 <= avg <= 100 -> 'O' (Outstanding)
+       - 80 <= avg < 90  -> 'E' (Exceeds Expectations)
+       - 70 <= avg < 80  -> 'A' (Acceptable)
+       - 55 <= avg < 70  -> 'P' (Poor)
+       - 40 <= avg < 55  -> 'D' (Dreadful)
+       - avg < 40        -> 'T' (Troll)
+
+
+2. APRENDIZAJES Y CONCEPTOS CLAVE
+--------------------------------------------------------------------
+• Herencia en Python (`class SubClase(ClaseBase)`):
+  - Permite extener clases existentes para reutilizar código sin duplicar 
+    atributos o métodos comunes.
+
+• La función `super()`:
+  - `super().__init__(...)` invoca de forma limpia el método inicializador 
+    de la clase padre (`Person`), asegurando que la parte básica del objeto 
+    quede correctamente configurada antes de agregar lógica propia de `Student`.
+
+• Modelado de Objetos y Encapsulación:
+  - Definición de métodos de clase que operan directamente sobre los 
+    atributos internos del objeto (`self.scores`), manteniendo la lógica de 
+    negocio (como el cálculo de promedios) encapsulada dentro de la clase correspondiente.
+
+• Operaciones en Listas y Estructuras Condicionales Múltiples:
+  - Uso de las funciones nativas `sum()` y `len()` para calcular promedios de 
+    forma compacta.
+  - Expresiones condicionales encadenadas (ej. `90 <= avg <= 100`) para evaluar 
+    rangos numéricos con claridad.
+
+====================================================================
