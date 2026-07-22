@@ -1,0 +1,46 @@
+====================================================================
+RESUMEN Y ANÁLISIS DE CÓDIGO PYTHON: CÁLCULO DE FACTORIAL Y I/O
+====================================================================
+
+1. DESCRIPCIÓN Y FUNCIONAMIENTO DEL CÓDIGO
+--------------------------------------------------------------------
+Este programa implementa una función para calcular el factorial de un 
+número entero 'n' (n!) y gestiona la salida escribiendo el resultado 
+en un archivo especificado por variables de entorno de un entorno de 
+evaluación automatizada (como HackerRank).
+
+Paso a paso del flujo de ejecución:
+1. import math, os, sys: Importa los módulos nativos necesarios. 'math' 
+   provee la función matemática del factorial y 'os' permite interactuar 
+   con el sistema operativo.
+2. def factorial(n): Define la función encargada del cálculo. En este caso, 
+   hace uso directo de la función optimizada 'math.factorial(n)', la cual 
+   retorna el producto de todos los enteros desde 1 hasta 'n'.
+3. fptr = open(os.environ["OUTPUT_PATH"], "w"): Abre para escritura el archivo 
+   donde el juez en línea espera recibir la respuesta, obteniendo la ruta 
+   desde las variables de entorno del sistema (OUTPUT_PATH).
+4. n = int(input().strip()): Lee el entero de entrada eliminando espacios.
+5. result = factorial(n): Llama a la función y guarda el resultado.
+6. fptr.write(str(result) + "
+") y fptr.close(): Convierte el resultado a 
+   cadena, lo escribe en el archivo con un salto de línea y cierra el puntero.
+
+
+2. APRENDIZAJES Y CONCEPTOS CLAVE
+--------------------------------------------------------------------
+• Módulo 'math' y Funciones Integradas:
+  - Aprovechar las funciones integradas de la librería estándar como 
+    `math.factorial()` es más eficiente y previene errores que implementar 
+    un bucle manual o una función recursiva desde cero.
+
+• Manejo de Archivos y Variables de Entorno (`os.environ`):
+  - `os.environ["OUTPUT_PATH"]` permite acceder a la ruta donde la plataforma 
+    de pruebas espera recibir el archivo de salida del programa.
+  - La apertura (`open`) y posterior cierre (`close`) del archivo asegura 
+    que los datos se escriban correctamente en el disco sin pérdidas.
+
+• Conversión de Tipos para Escritura de Archivos:
+  - Los métodos `.write()` de archivos requieren recibir un `string`, por lo 
+    que es indispensable transformar el número entero mediante `str(result)`.
+
+====================================================================
