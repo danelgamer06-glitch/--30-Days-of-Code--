@@ -1,0 +1,44 @@
+====================================================================
+RESUMEN Y ANÁLISIS DE CÓDIGO PYTHON: CONSECUCIÓN MÁXIMA DE UNOS BINARIOS
+====================================================================
+
+1. DESCRIPCIÓN Y FUNCIONAMIENTO DEL CÓDIGO
+--------------------------------------------------------------------
+Este programa toma un número entero en base 10 ('n'), lo convierte a su 
+representación binaria (base 2) e identifica la longitud máxima de 
+unos consecutivos que aparecen en dicha representación.
+
+Paso a paso del flujo de ejecución:
+1. n = int(input().strip()): Lee un entero 'n' de la entrada estándar 
+   limpiando espacios adicionales con .strip().
+2. binary_str = bin(n)[2:]: La función bin(n) convierte el número a una 
+   cadena binaria con el prefijo '0b' (por ejemplo, bin(13) devuelve '0b1101'). 
+   El slicing [2:] elimina los primeros dos caracteres, dejando únicamente 
+   los dígitos binarios ('1101').
+3. ones_groups = binary_str.split("0"): Divide la cadena binaria utilizando 
+   el carácter '0' como delimitador. Esto separa la secuencia en subcadenas 
+   compuestas únicamente por '1's (o cadenas vacías si hay ceros seguidos).
+4. len(max(ones_groups)): La función max() encuentra la cadena de mayor 
+   longitud dentro de la lista 'ones_groups', y len() calcula su tamaño, 
+   obteniendo así el número máximo de unos consecutivos.
+
+
+2. APRENDIZAJES Y CONCEPTOS CLAVE
+--------------------------------------------------------------------
+• Conversión a Binario y Slicing de Cadenas:
+  - Uso de `bin(n)` para obtener la representación binaria en Python.
+  - El uso de `[2:]` es una forma limpia y directa de omitir el prefijo '0b' 
+    que Python agrega automáticamente a las representaciones binarias.
+
+• Estrategia Inteligente de División (`.split("0")`):
+  - En lugar de iterar con bucles manuales y mantener contadores para contar 
+    1s consecutivos, dividir la cadena por '0' aísla directamente los bloques 
+    de '1's contiguos, reduciendo la complejidad del código.
+
+• Combinación de Funciones Integradas (`max()` y `len()`):
+  - `max(ones_groups)` evalúa las subcadenas por orden léxico (donde una cadena 
+    de más unos es mayor que una de menos unos).
+  - Aplicar `len()` sobre el resultado retorna el conteo exacto del grupo más 
+    largo de forma sumamente concisa.
+
+====================================================================
